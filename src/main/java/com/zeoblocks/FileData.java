@@ -7,6 +7,7 @@ public class FileData {
         DataType = dataType;
         Format = format;
     }
+
     public String Parameter;
     public String Required;
     public String DataType;
@@ -16,40 +17,26 @@ public class FileData {
     public String toString() {
         return
                 "Parameter='" + Parameter + '\'' + ", Required='" + Required + '\'' +
-                ", DataType='" + DataType + '\'' +
-                ", Format='" + Format + '\'' +
-                '}';
+                        ", DataType='" + DataType + '\'' +
+                        ", Format='" + Format + '\'' +
+                        '}';
     }
 
     public String getParameter() {
         return Parameter;
     }
 
-    public void setParameter(String parameter) {
-        Parameter = parameter;
-    }
-
     public String getRequired() {
         return Required;
-    }
-
-    public void setRequired(String required) {
-        Required = required;
     }
 
     public String getDataType() {
         return DataType;
     }
 
-    public void setDataType(String dataType) {
-        DataType = dataType;
-    }
 
     public String getFormat() {
         return Format;
     }
 
-    public void setFormat(String format) {
-        Format = format;
-    }
 }
