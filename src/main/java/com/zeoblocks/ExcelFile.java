@@ -26,7 +26,7 @@ public class ExcelFile {
 
         Map<Integer, Object[]> data = new TreeMap<Integer, Object[]>();
         data.put(1, new Object[]{"count", "Parameter", "Required", "Data type", "Format"});
-        int count = 2;
+        int count = 1;
         for (String key : map.keySet()) {
             FileData dataObject = map.get(key);
             data.put(count, new Object[]{count, dataObject.getParameter(), dataObject.getRequired(), dataObject.getDataType(), dataObject.getFormat()});
@@ -54,14 +54,15 @@ public class ExcelFile {
 //Write the workbook in file system
 
         try {
-            File excel = new File("src/main/resources/" + fileName + ".xlsx");
+            File excel = new File( fileName + ".xlsx");
+
             if (excel.delete()) {
                 System.out.println("File is deleted");
             }
             FileOutputStream out = new FileOutputStream(excel);
             workbook.write(out);
             out.close();
-            System.out.println("written successfully on disk.");
+            System.out.println("Excel файл создан по пути " + excel.getAbsolutePath());
 
         } catch (Exception e) {
             e.printStackTrace();
