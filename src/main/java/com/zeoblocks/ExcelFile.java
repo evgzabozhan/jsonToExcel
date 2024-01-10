@@ -25,11 +25,11 @@ public class ExcelFile {
 //Prepare data to be written as an Object[]
 
         Map<Integer, Object[]> data = new TreeMap<Integer, Object[]>();
-        data.put(1, new Object[]{"count", "Parameter", "Required", "Data type", "Format"});
-        int count = 1;
+        data.put(1, new Object[]{ "Parameter", "Required", "Data type", "Format"});
+        int count = 2;
         for (String key : map.keySet()) {
             FileData dataObject = map.get(key);
-            data.put(count, new Object[]{count, dataObject.getParameter(), dataObject.getRequired(), dataObject.getDataType(), dataObject.getFormat()});
+            data.put(count, new Object[]{dataObject.getParameter(), dataObject.getRequired(), dataObject.getDataType(), dataObject.getFormat()});
             count++;
         }
 
