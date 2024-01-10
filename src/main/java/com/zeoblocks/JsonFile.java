@@ -17,11 +17,10 @@ public class JsonFile {
     public void parseData(String data) {
         JSONObject obj = new JSONObject(data);
         jsonCreateMap(obj,"");
-        show();
     }
 
     public String getDataFromJson(String fileName) throws IOException {
-        return Files.readString(Paths.get("src/main/resources/" + fileName + ".json"));
+        return Files.readString(Paths.get(fileName));
     }
 
     public void jsonCreateMap(JSONObject obj, String inputPath) {
@@ -78,12 +77,6 @@ public class JsonFile {
             return String.valueOf(value);
         } else {
             return " ";
-        }
-    }
-
-    public void show() {
-        for (Map.Entry<String, FileData> entry : jsonMap.entrySet()) {
-            System.out.println(entry.getKey() + "/" + entry.getValue());
         }
     }
 }
